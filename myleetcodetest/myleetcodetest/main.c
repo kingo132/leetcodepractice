@@ -5,6 +5,15 @@
 #include "candy.h"
 #include "sumsubary.h"
 #include "leetcode743.h"
+#include "leetcode4.h"
+#include "leetcode46.h"
+#include "leetcode912.h"
+#include "leetcode1497.h"
+#include "leetcode44.h"
+#include "leetcode3.h"
+#include "leetcode415.h"
+#include "leetcode440.h"
+#include "leetcode6.h"
 
 void printBinary(int num) {
     int i;
@@ -34,7 +43,21 @@ int main(int argc, char** argv) {
     //wordsearchMain();
     //candyMain();
     //sumsubary_main();
-    leetcode743Main();
+    //leetcode743Main();
+    //leetcode4Main();
+    //leetcode912Main();
+    //leetcode1497Main();
+    //leetcode3Main();
+    //leetcode415Main();
+    //leetcode440Main();
+    
+    //int** permute(int* nums, int numsSize, int* returnSize, int** returnColumnSizes);
+    //int nums[3] = {1, 2, 3};
+    //int returnSize = 0;
+    //int* returnColumnSizes;
+    //permute(nums, 3, &returnSize, &returnColumnSizes);
+    
+    leetcode6Main();
     
     return 0;
 }

@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-int isDebug = 0;
+int isDebugLT743 = 0;
 
 int minIdxFromSet(int* isIncluded, int* minWeightAry, int n) {
     int min = INT_MAX;
@@ -54,7 +54,7 @@ int networkDelayTimeOld(int** times, int timesSize, int* timesColSize, int n, in
 
     for (int i = 0; i < n; i++) {
         int idx = minIdxFromSet(isIncluded, minWeightAry, n);
-        if (isDebug) printf("Get min %d\n", idx + 1);
+        if (isDebugLT743) printf("Get min %d\n", idx + 1);
         if (idx < 0 || idx >= n) {
             printf("Invalid n: %d\n", idx);
             break;
@@ -67,7 +67,7 @@ int networkDelayTimeOld(int** times, int timesSize, int* timesColSize, int n, in
                     minWeightAry[j] = w;
                     parent[j] = idx;
                     costFromK[j] = costFromK[idx] + w;
-                    if (isDebug) printf("Update min weight %d->%d: %d, cost from K to %d: %d\n", idx + 1, j + 1, w, j + 1, costFromK[j]);
+                    if (isDebugLT743) printf("Update min weight %d->%d: %d, cost from K to %d: %d\n", idx + 1, j + 1, w, j + 1, costFromK[j]);
                 }
             }
         }
@@ -79,26 +79,26 @@ int networkDelayTimeOld(int** times, int timesSize, int* timesColSize, int n, in
         }
     }
 
-    if (isDebug) printf("Dump parents:\n");
+    if (isDebugLT743) printf("Dump parents:\n");
     for (int i = 0; i < n; i++) {
-        if (isDebug) printf("%d(%d) ", parent[i], costFromK[i]);
+        if (isDebugLT743) printf("%d(%d) ", parent[i], costFromK[i]);
     }
-    if (isDebug) printf("\n");
+    if (isDebugLT743) printf("\n");
 
     for (int i = 0; i < n; i++) {
         int k = i;
         int cost = minWeightAry[k];
-        if (isDebug) printf("--> Try to find cost of %d: %d\n", k + 1, cost);
+        if (isDebugLT743) printf("--> Try to find cost of %d: %d\n", k + 1, cost);
         while (parent[k] >= 0 && parent[k] < n && costFromK[parent[k]] == -1) {
-            if (isDebug) printf("    Add cost from %d: %d\n", parent[k] + 1, minWeightAry[k]);
+            if (isDebugLT743) printf("    Add cost from %d: %d\n", parent[k] + 1, minWeightAry[k]);
             cost += minWeightAry[k];
             k = parent[k];
         }
         if (parent[k] >= 0 && parent[k] < n && costFromK[parent[k]] != -1) {
-            if (isDebug) printf("    Add cost from end %d: %d\n", k + 1, costFromK[parent[k]]);
+            if (isDebugLT743) printf("    Add cost from end %d: %d\n", k + 1, costFromK[parent[k]]);
             cost += costFromK[parent[k]];
         }
-        if (isDebug) printf("    Node %d total cost: %d\n", i + 1, cost);
+        if (isDebugLT743) printf("    Node %d total cost: %d\n", i + 1, cost);
         costFromK[i] = cost;
     }
 
@@ -154,7 +154,7 @@ int networkDelayTimeWithQueue(int** times, int timesSize, int* timesColSize, int
 
     while (queSize > 0) {
         int i = que[front].v;
-        if (isDebug) printf("Processing %d\n", i + 1);
+        if (isDebugLT743) printf("Processing %d\n", i + 1);
         front = (front + 1) % MAX_QUE_SIZE;
         queSize --;
         visited[i] = 1;
@@ -170,12 +170,12 @@ int networkDelayTimeWithQueue(int** times, int timesSize, int* timesColSize, int
                     if (visited[child] == 0) {
                         que[tail].v = child;
                         que[tail].cost = newCost;
-                        if (isDebug) printf("Add %d,%d to queue\n", child + 1, newCost);
+                        if (isDebugLT743) printf("Add %d,%d to queue\n", child + 1, newCost);
                         tail = (tail + 1) % MAX_QUE_SIZE;
                         queSize ++;
 
                         // Sort queue
-                        if (isDebug) dumpQueue(que, front, tail, queSize);
+                        if (isDebugLT743) dumpQueue(que, front, tail, queSize);
                         int idxTmp = queSize - 1;
                         while (queSize > 1 && idxTmp > 0) {
                             int ii = (front + idxTmp) % MAX_QUE_SIZE;
@@ -193,7 +193,7 @@ int networkDelayTimeWithQueue(int** times, int timesSize, int* timesColSize, int
 
                             idxTmp --;
                         }
-                        if (isDebug) dumpQueue(que, front, tail, queSize);
+                        if (isDebugLT743) dumpQueue(que, front, tail, queSize);
                     }
                 }
             }
