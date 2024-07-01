@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< Updated upstream
 		962C48A82C31E84400AC8582 /* leetcode93.c in Sources */ = {isa = PBXBuildFile; fileRef = 962C48A72C31E84400AC8582 /* leetcode93.c */; };
 		962C48AB2C31EB7400AC8582 /* leetcode121.c in Sources */ = {isa = PBXBuildFile; fileRef = 962C48AA2C31EB7400AC8582 /* leetcode121.c */; };
 		962C48C12C32262000AC8582 /* leetcode164.c in Sources */ = {isa = PBXBuildFile; fileRef = 962C48C02C32262000AC8582 /* leetcode164.c */; };
+=======
+		963189392C32379300CD6285 /* leetcode207.c in Sources */ = {isa = PBXBuildFile; fileRef = 963189382C32379300CD6285 /* leetcode207.c */; };
+		9631893C2C32550600CD6285 /* leetcode8.c in Sources */ = {isa = PBXBuildFile; fileRef = 9631893B2C32550600CD6285 /* leetcode8.c */; };
+		9631893F2C326E3900CD6285 /* leetcode384.c in Sources */ = {isa = PBXBuildFile; fileRef = 9631893E2C326E3900CD6285 /* leetcode384.c */; };
+>>>>>>> Stashed changes
 		966E23282C2CDA4700F84C3A /* leetcode679.c in Sources */ = {isa = PBXBuildFile; fileRef = 966E23272C2CDA4700F84C3A /* leetcode679.c */; };
 		966E232B2C2CDE5F00F84C3A /* leetcode440.c in Sources */ = {isa = PBXBuildFile; fileRef = 966E232A2C2CDE5F00F84C3A /* leetcode440.c */; };
 		966E232E2C2DD8F000F84C3A /* leetcode62.c in Sources */ = {isa = PBXBuildFile; fileRef = 966E232D2C2DD8F000F84C3A /* leetcode62.c */; };
@@ -108,12 +114,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+<<<<<<< Updated upstream
 		962C48A62C31E84400AC8582 /* leetcode93.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = leetcode93.h; sourceTree = "<group>"; };
 		962C48A72C31E84400AC8582 /* leetcode93.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = leetcode93.c; sourceTree = "<group>"; };
 		962C48A92C31EB7400AC8582 /* leetcode121.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = leetcode121.h; sourceTree = "<group>"; };
 		962C48AA2C31EB7400AC8582 /* leetcode121.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = leetcode121.c; sourceTree = "<group>"; };
 		962C48BF2C32262000AC8582 /* leetcode164.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = leetcode164.h; sourceTree = "<group>"; };
 		962C48C02C32262000AC8582 /* leetcode164.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = leetcode164.c; sourceTree = "<group>"; };
+=======
+		963189372C32379300CD6285 /* leetcode207.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = leetcode207.h; sourceTree = "<group>"; };
+		963189382C32379300CD6285 /* leetcode207.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = leetcode207.c; sourceTree = "<group>"; };
+		9631893A2C32550600CD6285 /* leetcode8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = leetcode8.h; sourceTree = "<group>"; };
+		9631893B2C32550600CD6285 /* leetcode8.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = leetcode8.c; sourceTree = "<group>"; };
+		9631893D2C326E3900CD6285 /* leetcode384.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = leetcode384.h; sourceTree = "<group>"; };
+		9631893E2C326E3900CD6285 /* leetcode384.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = leetcode384.c; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		966E23262C2CDA4700F84C3A /* leetcode679.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = leetcode679.h; sourceTree = "<group>"; };
 		966E23272C2CDA4700F84C3A /* leetcode679.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = leetcode679.c; sourceTree = "<group>"; };
 		966E23292C2CDE5F00F84C3A /* leetcode440.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = leetcode440.h; sourceTree = "<group>"; };
@@ -477,12 +492,21 @@
 				96C13B822C30CE6200A8A635 /* leetcode94.c */,
 				96C13B842C30D5F000A8A635 /* leetcode6.h */,
 				96C13B852C30D5F000A8A635 /* leetcode6.c */,
+<<<<<<< Updated upstream
 				962C48A62C31E84400AC8582 /* leetcode93.h */,
 				962C48A72C31E84400AC8582 /* leetcode93.c */,
 				962C48A92C31EB7400AC8582 /* leetcode121.h */,
 				962C48AA2C31EB7400AC8582 /* leetcode121.c */,
 				962C48BF2C32262000AC8582 /* leetcode164.h */,
 				962C48C02C32262000AC8582 /* leetcode164.c */,
+=======
+				963189372C32379300CD6285 /* leetcode207.h */,
+				963189382C32379300CD6285 /* leetcode207.c */,
+				9631893A2C32550600CD6285 /* leetcode8.h */,
+				9631893B2C32550600CD6285 /* leetcode8.c */,
+				9631893D2C326E3900CD6285 /* leetcode384.h */,
+				9631893E2C326E3900CD6285 /* leetcode384.c */,
+>>>>>>> Stashed changes
 			);
 			path = myleetcodetest;
 			sourceTree = "<group>";
@@ -576,13 +600,18 @@
 				96A065D22C222F690093A909 /* leetcode692.c in Sources */,
 				96A065452C17DFBD0093A909 /* main.c in Sources */,
 				96A065A52C1D13B40093A909 /* leetcode162.c in Sources */,
+				963189392C32379300CD6285 /* leetcode207.c in Sources */,
 				96A065C02C20A1AA0093A909 /* leetcode2.c in Sources */,
 				96A065BD2C200FD70093A909 /* leetcode155.c in Sources */,
 				962C48A82C31E84400AC8582 /* leetcode93.c in Sources */,
 				96C13B802C30CD5100A8A635 /* leetcode110.c in Sources */,
 				96A0657A2C1976F10093A909 /* leetcode113.c in Sources */,
 				96A065682C18C9E70093A909 /* leetcode142.c in Sources */,
+<<<<<<< Updated upstream
 				962C48C12C32262000AC8582 /* leetcode164.c in Sources */,
+=======
+				9631893F2C326E3900CD6285 /* leetcode384.c in Sources */,
+>>>>>>> Stashed changes
 				96A065CF2C2204040093A909 /* leetcode1155.c in Sources */,
 				96C13B682C2FE04500A8A635 /* leetcode42.c in Sources */,
 				96A065652C18A96D0093A909 /* leetcode198.c in Sources */,
@@ -628,6 +657,7 @@
 				96A0656B2C1908CA0093A909 /* leetcode116.c in Sources */,
 				96A065862C1B67C80093A909 /* leetcode700.c in Sources */,
 				966E232B2C2CDE5F00F84C3A /* leetcode440.c in Sources */,
+				9631893C2C32550600CD6285 /* leetcode8.c in Sources */,
 				96A065C32C20FD670093A909 /* leetcode47.c in Sources */,
 				96A065B42C1FC11F0093A909 /* leetcode912.c in Sources */,
 			);
