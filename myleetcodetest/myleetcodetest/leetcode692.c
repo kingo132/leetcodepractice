@@ -92,7 +92,7 @@ void minHeapInsert(HEAPNODE* minHeap, int* heapSize, int maxHeapSize, char* str,
     }
 }
 
-char** topKFrequent(char** words, int wordsSize, int k, int* returnSize) {
+char** topKFrequentLT692(char** words, int wordsSize, int k, int* returnSize) {
     *returnSize = 0;
     qsort(words, wordsSize, sizeof(char*), stringcomp);
     for (int i = 0; i < wordsSize; i++) {
