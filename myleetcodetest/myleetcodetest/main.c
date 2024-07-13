@@ -14,6 +14,7 @@
 #include "leetcode415.h"
 #include "leetcode440.h"
 #include "leetcode6.h"
+#include "leetcode673.h"
 
 void printBinary(int num) {
     int i;
@@ -57,7 +58,8 @@ int main(int argc, char** argv) {
     //int* returnColumnSizes;
     //permute(nums, 3, &returnSize, &returnColumnSizes);
     
-    leetcode6Main();
+    //leetcode6Main();
+    leetcode673main();
     
     return 0;
 }

@@ -45,15 +45,15 @@ int robGreedy(int* nums, int numsSize) {
     return sum;
 }
 
-int robHelper(int* nums, int numsSize, int idx) {
+int robHelperLT198(int* nums, int numsSize, int idx) {
     int max = 0;
     if (idx < numsSize) {
-        int sum = nums[idx] + robHelper(nums, numsSize, idx + 2);
+        int sum = nums[idx] + robHelperLT198(nums, numsSize, idx + 2);
         if (sum > max) {
             max = sum;
         }
         if (idx + 1 < numsSize) {
-            sum = nums[idx + 1] + robHelper(nums, numsSize, idx + 3);
+            sum = nums[idx + 1] + robHelperLT198(nums, numsSize, idx + 3);
             if (sum > max) {
                 max = sum;
             }
@@ -64,7 +64,7 @@ int robHelper(int* nums, int numsSize, int idx) {
 }
 
 int robRecursive(int* nums, int numsSize) {
-    return robHelper(nums, numsSize, 0);
+    return robHelperLT198(nums, numsSize, 0);
 }
 
 int robA(int* nums, int numsSize) {
@@ -111,7 +111,7 @@ int robMyMy(int* nums, int numsSize) {
     return robNonRecursive(nums, numsSize);
 }
 
-int rob(int* nums, int numsSize) {
+int robLT198(int* nums, int numsSize) {
     int* dp = (int*)malloc((numsSize + 1) * sizeof(int));
     
     dp[0] = 0;

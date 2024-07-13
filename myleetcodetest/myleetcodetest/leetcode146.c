@@ -50,7 +50,7 @@ LRUCache* lRUCacheCreate(int capacity) {
     return lru;
 }
 
-void dumpList(const char* prefix, int d, int v, HASHNODE* head) {
+void dumpListLT146(const char* prefix, int d, int v, HASHNODE* head) {
     return;
     printf("%s %d,%d: ", prefix, d, v);
     while (head) {
@@ -61,7 +61,7 @@ void dumpList(const char* prefix, int d, int v, HASHNODE* head) {
 }
 
 int lRUCacheGet(LRUCache* obj, int key) {
-    dumpList("get1", key, -1, obj->head);
+    dumpListLT146("get1", key, -1, obj->head);
     int k = key % obj->hashMaxSize;
     for (int i = 0; i < obj->hashMaxSize; i++) {
         //printf("Try k: %d\n", k);
@@ -88,7 +88,7 @@ int lRUCacheGet(LRUCache* obj, int key) {
                 obj->head->prev = &obj->hash[k];
                 //dumpList("get24", key, obj->head);
                 obj->head = &obj->hash[k];
-                dumpList("get2", -1, key, obj->head);
+                dumpListLT146("get2", -1, key, obj->head);
             }
             return obj->hash[k].v;
         }
@@ -98,7 +98,7 @@ int lRUCacheGet(LRUCache* obj, int key) {
 }
 
 void lRUCachePut(LRUCache* obj, int key, int value) {
-    dumpList("put1", key, value, obj->head);
+    dumpListLT146("put1", key, value, obj->head);
     int k = key % obj->hashMaxSize;
     int status = -1; // -1 no seat no duplicate, 0 have seat, 1 have duplicate
     for (int i = 0; i < obj->hashMaxSize; i++) {
@@ -127,9 +127,9 @@ void lRUCachePut(LRUCache* obj, int key, int value) {
             obj->hash[k].next = obj->head;
             obj->head->prev = &obj->hash[k];
             obj->head = &obj->hash[k];
-            dumpList("put4", key, value, obj->head);
+            dumpListLT146("put4", key, value, obj->head);
         }
-        dumpList("put2", key, value, obj->head);
+        dumpListLT146("put2", key, value, obj->head);
         return;
     }
     
@@ -148,7 +148,7 @@ void lRUCachePut(LRUCache* obj, int key, int value) {
             }
             obj->hashCurSize--;
         }
-        dumpList("put3", key, value, obj->head);
+        dumpListLT146("put3", key, value, obj->head);
         obj->hash[k].k = key;
         obj->hash[k].v = value;
         obj->hash[k].isOccupied = 1;
@@ -163,7 +163,7 @@ void lRUCachePut(LRUCache* obj, int key, int value) {
 
         obj->hashCurSize++;
         //printf("Put %d on %d\n", key, k);
-        dumpList("put4", key, value, obj->head);
+        dumpListLT146("put4", key, value, obj->head);
         return;
     }
 
