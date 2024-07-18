@@ -5,56 +5,26 @@
 #include <math.h>
 #include <time.h>
 
-int maxLT887(int a, int b) {
-    return (a > b) ? a : b;
+// 1. 动态规划算法一定要先从大到小问题的思路去思考；2. 动态规划一定要减少每次迭代的参数个数；3. 动态规划要存储每个迭代的参数不能遗漏。
+// 简化迭代的过程，减少迭代的参数，是动态规划优化的重点
+int stoneGameHelper(int* piles, int pilesSize, int l, int r, int* dp) {
+    if (l >= r) {
+        return piles[l];
+    }
+    if (dp[l * pilesSize + r] != -1) {
+        return dp[l * pilesSize + r];
+    }
+    int scoreLeft = piles[l] - stoneGameHelper(piles, pilesSize, l + 1, r, dp);
+    int scoreRight = piles[r] - stoneGameHelper(piles, pilesSize, l, r - 1, dp);
+    //printf("l: %d, r: %d, Left: %d, Right: %d\n", l, r, scoreLeft, scoreRight);
+    dp[l * pilesSize + r] = scoreLeft > scoreRight ? scoreLeft : scoreRight;
+    return dp[l * pilesSize + r];
 }
 
-int minLT887(int a, int b) {
-    return (a < b) ? a : b;
-}
-
-int superEggDrop(int k, int n) {
-    // Create a table to store results of subproblems
-    int dp[k + 1][n + 1];
-    
-    // Initialize base cases:
-    // If we have 0 floors, 0 trials are needed
-    // If we have 1 floor, 1 trial is needed
-    for (int i = 1; i <= k; i++) {
-        dp[i][0] = 0;
-        dp[i][1] = 1;
-    }
-
-    // If we have 1 egg, we need j trials for j floors
-    for (int j = 1; j <= n; j++) {
-        dp[1][j] = j;
-    }
-
-    // Fill the rest of the entries in the table using binary search for optimal substructure property
-    for (int i = 2; i <= k; i++) {
-        for (int j = 2; j <= n; j++) {
-            dp[i][j] = INT_MAX;
-            int low = 1, high = j, mid;
-            while (low <= high) {
-                mid = (low + high) / 2;
-                int break_case = dp[i - 1][mid - 1];
-                int not_break_case = dp[i][j - mid];
-                // 下面取的是最差情况
-                int res = 1 + maxLT887(break_case, not_break_case);
-
-                // 注意，这里加一减一是二分法暂停的关键
-                if (break_case > not_break_case) {
-                    high = mid - 1;
-                } else {
-                    low = mid + 1;
-                }
-
-                // 找到最优的次数
-                dp[i][j] = minLT887(dp[i][j], res);
-            }
-        }
-    }
-
-    // dp[k][n] holds the result
-    return dp[k][n];
+bool stoneGame(int* piles, int pilesSize) {
+    int* dp = (int*)malloc(pilesSize * pilesSize * sizeof(int));
+    memset(dp, -1, pilesSize * pilesSize * sizeof(int));
+    int ret = stoneGameHelper(piles, pilesSize, 0, pilesSize - 1, dp);
+    printf("%d\n", ret);
+    return ret > 0;
 }
