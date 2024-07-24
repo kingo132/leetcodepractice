@@ -5,6 +5,13 @@
 #include <math.h>
 #include <time.h>
 
+// Definition for a binary tree node.
+struct TreeNode {
+    int val;
+    struct TreeNode *left;
+    struct TreeNode *right;
+};
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -37,16 +44,16 @@ char* serialize(struct TreeNode* root) {
     int idx = 0;
     char* rstr = (char*)malloc(50000 * sizeof(char));
     serializeHelper(root, rstr, &idx);
-    printf("idx: %d\n", idx);
+    //printf("idx: %d\n", idx);
     rstr[idx] = '\0';
     return rstr;
 }
 
 int getNextNum(char** s) {
-    printf("Get next: %s\n", *s);
+    //printf("Get next: %s\n", *s);
     if (**s == ',') {
         (*s)++;
-        return -1;
+        return INT_MIN;
     }
 
     char* p = *s;
@@ -81,10 +88,13 @@ struct TreeNode* deserializeHelper(char** s) {
     }
 
     int v = getNextNum(s);
-    if (v != -1) {
+    //printf("Visit: %d, s: %s\n", v, *s);
+    if (v != INT_MIN) {
         struct TreeNode* n = createNode(v);
         n->left = deserializeHelper(s);
+        //if (n->left) printf("%d get left: %d\n", v, n->left->val);
         n->right = deserializeHelper(s);
+        //if (n->right) printf("%d get right: %d\n", v, n->right->val);
         return n;
     }
     return NULL;
@@ -92,7 +102,7 @@ struct TreeNode* deserializeHelper(char** s) {
 
 /** Decodes your encoded data to tree. */
 struct TreeNode* deserialize(char* data) {
-    printf("s: %s\n", data);
+    //printf("s: %s\n", data);
     return deserializeHelper(&data);
 }
 
