@@ -11,7 +11,7 @@
 
 #include "leetcode1497.h"
 
-void dumpAry(const char* prefix, int* arr, int lvl, bool rst) {
+void dumpAryLT1497(const char* prefix, int* arr, int lvl, bool rst) {
     printf("%s: ", prefix);
     for (int i = 0; i < lvl; i++) {
         printf("(%d,%d) ", arr[i * 2], arr[i * 2 + 1]);
@@ -29,7 +29,7 @@ bool canArrangeHelper(int* arr, int arrSize, int k, unsigned char* visited, int 
                 aryForDump[level * 2] = arr[i];
                 aryForDump[level * 2 + 1] = arr[j];
                 if (level + 1 >= arrSize / 2) {
-                    dumpAry("Found", aryForDump, level + 1, true);
+                    dumpAryLT1497("Found", aryForDump, level + 1, true);
                     return true;
                 }
                 visited[i] = 1;
@@ -37,7 +37,7 @@ bool canArrangeHelper(int* arr, int arrSize, int k, unsigned char* visited, int 
                 if (canArrangeHelper(arr, arrSize, k, visited, ii + 1, level + 1, aryForDump)) {
                     return true;
                 }
-                dumpAry("Not found", aryForDump, level + 1, false);
+                dumpAryLT1497("Not found", aryForDump, level + 1, false);
                 visited[i] = 0;
                 visited[j] = 0;
             }

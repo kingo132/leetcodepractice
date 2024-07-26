@@ -13,7 +13,7 @@
 
 #include "leetcode73.h"
 
-void dumpMatrix(int** matrix, int m, int n) {
+void dumpMatrixLT73(int** matrix, int m, int n) {
     return;
     printf("dump matrix ->\n");
     for (int i = 0; i < m; i++) {
@@ -38,7 +38,7 @@ void setZeroes(int** matrix, int matrixSize, int* matrixColSize) {
             break;
         }
     }
-    dumpMatrix(matrix, matrixSize, matrixColSize[0]);
+    dumpMatrixLT73(matrix, matrixSize, matrixColSize[0]);
     for (int i = 0; i < matrixSize; i++) {
         for (int j = 0; j < matrixColSize[0]; j++) {
             if (matrix[i][j] == 0) {
@@ -47,7 +47,7 @@ void setZeroes(int** matrix, int matrixSize, int* matrixColSize) {
             }
         }
     }
-    dumpMatrix(matrix, matrixSize, matrixColSize[0]);
+    dumpMatrixLT73(matrix, matrixSize, matrixColSize[0]);
     for (int i = 1; i < matrixSize; i++) {
         if (matrix[i][0] == 0) {
             for (int j = 1; j < matrixColSize[0]; j++) {
@@ -55,7 +55,7 @@ void setZeroes(int** matrix, int matrixSize, int* matrixColSize) {
             }
         }
     }
-    dumpMatrix(matrix, matrixSize, matrixColSize[0]);
+    dumpMatrixLT73(matrix, matrixSize, matrixColSize[0]);
     for (int i = 1; i < matrixColSize[0]; i++) {
         if (matrix[0][i] == 0) {
             for (int j = 1; j < matrixSize; j++) {
@@ -63,17 +63,17 @@ void setZeroes(int** matrix, int matrixSize, int* matrixColSize) {
             }
         }
     }
-    dumpMatrix(matrix, matrixSize, matrixColSize[0]);
+    dumpMatrixLT73(matrix, matrixSize, matrixColSize[0]);
     if (firstRowZero) {
         for (int i = 0; i < matrixColSize[0]; i++) {
             matrix[0][i] = 0;
         }
     }
-    dumpMatrix(matrix, matrixSize, matrixColSize[0]);
+    dumpMatrixLT73(matrix, matrixSize, matrixColSize[0]);
     if (firstColZero) {
         for (int i = 0; i < matrixSize; i++) {
             matrix[i][0] = 0;
         }
     }
-    dumpMatrix(matrix, matrixSize, matrixColSize[0]);
+    dumpMatrixLT73(matrix, matrixSize, matrixColSize[0]);
 }

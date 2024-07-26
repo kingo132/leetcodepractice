@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <limits.h>
@@ -112,7 +113,7 @@ void addHash(HashNode* hs, int key, int val) {
     }
 }
 
-int getHash(HashNode* hs, int key) {
+int getHashLT560(HashNode* hs, int key) {
     int k = (key < 0 ? -key : key) % MAXHASHSIZE;
     for (int i = 0; i < MAXHASHSIZE; i++) {
         if (hs[k].isOcc == 0) {
@@ -135,11 +136,11 @@ int subarraySum(int* nums, int numsSize, int k) {
     int cnt = 0, sum = 0;
     for (int i = 0; i < numsSize; i++) {
         sum += nums[i];
-        int v1 = getHash(hs, sum - k);
+        int v1 = getHashLT560(hs, sum - k);
         if (v1 != -1) {
             cnt += v1;
         }
-        int v2 = getHash(hs, sum);
+        int v2 = getHashLT560(hs, sum);
         if (v2 == -1) {
             addHash(hs, sum, 1);
         } else {

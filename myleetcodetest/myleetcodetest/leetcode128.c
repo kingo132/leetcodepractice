@@ -80,7 +80,7 @@ void insertHashLT128(HASHNODE* hash, int hashsize, int minVal, int maxVal, int k
     }
 }
 
-int getHash(HASHNODE* hashList, int hashsize, int minVal, int maxVal, int key) {
+int getHashLT128(HASHNODE* hashList, int hashsize, int minVal, int maxVal, int key) {
     if (key < minVal || key > maxVal) {
         return -1;
     }
@@ -130,7 +130,7 @@ int longestConsecutive(int* nums, int numsSize) {
 
     int ret = 0;
     for (int i = 0; i < numsSize; i++) {
-        if (getHash(hashList, hashsize, minVal, maxVal, nums[i] - 1) != -1) {
+        if (getHashLT128(hashList, hashsize, minVal, maxVal, nums[i] - 1) != -1) {
             //printf("Ignore %d\n", nums[i]);
             continue;
         }
@@ -141,7 +141,7 @@ int longestConsecutive(int* nums, int numsSize) {
 
         int v = nums[i] + 1;
         int seqlen = 1;
-        while (getHash(hashList, hashsize, minVal, maxVal, v) != -1) {
+        while (getHashLT128(hashList, hashsize, minVal, maxVal, v) != -1) {
             seqlen ++;
             v ++;
         }

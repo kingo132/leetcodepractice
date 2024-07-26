@@ -110,7 +110,7 @@ int maxLT337(int a, int b) {
 }
 
 // A helper function to perform DFS and calculate the maximum money.
-void dfs(struct TreeNode* node, int* rob, int* not_rob) {
+void dfsLT337(struct TreeNode* node, int* rob, int* not_rob) {
     if (node == NULL) {
         *rob = 0;
         *not_rob = 0;
@@ -121,8 +121,8 @@ void dfs(struct TreeNode* node, int* rob, int* not_rob) {
     int right_rob = 0, right_not_rob = 0;
     
     // Recursively calculate for left and right children.
-    dfs(node->left, &left_rob, &left_not_rob);
-    dfs(node->right, &right_rob, &right_not_rob);
+    dfsLT337(node->left, &left_rob, &left_not_rob);
+    dfsLT337(node->right, &right_rob, &right_not_rob);
     
     // If we rob this node, we cannot rob its children.
     *rob = node->val + left_not_rob + right_not_rob;
@@ -134,6 +134,6 @@ void dfs(struct TreeNode* node, int* rob, int* not_rob) {
 // The main function to calculate the maximum money the thief can rob.
 int robChatGPT(struct TreeNode* root) {
     int rob = 0, not_rob = 0;
-    dfs(root, &rob, &not_rob);
+    dfsLT337(root, &rob, &not_rob);
     return maxLT337(rob, not_rob);
 }

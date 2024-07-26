@@ -15,7 +15,7 @@ void reverseHelper(char* s, char* e) {
     }
 }
 
-char* reverseWords(char* s) {
+char* reverseWordsLT557(char* s) {
     char* ps = s, *pe = s;
     while(*pe) {
         if (*pe == ' ') {

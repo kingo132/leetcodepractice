@@ -13,7 +13,7 @@
 
 #include "leetcode74.h"
 
-bool searchMatrix(int** matrix, int matrixSize, int* matrixColSize, int target) {
+bool searchMatrixLT74(int** matrix, int matrixSize, int* matrixColSize, int target) {
     int l = 0, r = matrixSize;
     while (l < r) {
         int mid = (l + r) / 2;

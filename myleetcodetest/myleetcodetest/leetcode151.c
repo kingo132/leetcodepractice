@@ -13,7 +13,7 @@
 
 #include "leetcode151.h"
 
-char* reverseWords(char* s) {
+char* reverseWordsLT151(char* s) {
     int lens = 0;
     char* p = s;
     while (*p) {

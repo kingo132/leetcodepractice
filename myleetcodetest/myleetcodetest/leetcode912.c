@@ -22,7 +22,7 @@ void swapLT912(int* a, int* b) {
 
 #define SWAPLT912(a,b) {if ((a) != (b)) {/*printf("Swap %d <-> %d\n", (a), (b));*/ int ttt = (a); (a) = (b); (b) = ttt;} }
 
-void dumpArray(const char* prefix, int* arr, int n) {
+void dumpArrayLT912(const char* prefix, int* arr, int n) {
     printf("%s: ", prefix);
     for (int i = 0; i < n; i++) {
         printf("%d ", arr[i]);

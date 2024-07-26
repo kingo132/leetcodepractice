@@ -4,7 +4,7 @@
 #include <string.h>
 #include <math.h>
 
-int reverse(int x){
+int reverseLT7(int x){
     if (x == INT_MIN) {
         return 0;
     }

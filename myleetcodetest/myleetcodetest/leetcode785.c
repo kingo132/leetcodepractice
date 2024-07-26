@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <limits.h>
@@ -96,7 +97,7 @@ bool isBipartiteOldWrong(int** graph, int graphSize, int* graphColSize) {
     return ret;
 }
 
-void dumpArray(const char* prefix, int* ary, int n) {
+void dumpArrayLT785(const char* prefix, int* ary, int n) {
     printf("%s", prefix);
     for (int i = 0; i < n; i++) {
         printf("%d ", ary[i]);
@@ -163,8 +164,8 @@ bool isBipartite(int** graph, int graphSize, int* graphColSize) {
         }
     }
 
-    dumpArray("Group: ", group, graphSize);
-    dumpArray("Visited: ", visited, graphSize);
+    dumpArrayLT785("Group: ", group, graphSize);
+    dumpArrayLT785("Visited: ", visited, graphSize);
 
     free(group);
     free(visited);

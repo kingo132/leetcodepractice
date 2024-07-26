@@ -24,7 +24,7 @@ typedef struct {
     int vert;
 } ARYNODE;
 
-void dumpMat(const char* prefix, ARYNODE** mat, int m, int n) {
+void dumpMatLT1314(const char* prefix, ARYNODE** mat, int m, int n) {
     printf("%s\n", prefix);
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {

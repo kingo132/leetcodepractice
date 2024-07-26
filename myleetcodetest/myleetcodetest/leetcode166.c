@@ -1,8 +1,10 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <limits.h>
 #include <string.h>
 #include <math.h>
+#include <time.h>
 
 bool isLoopOld(char* s, int len) {
     //printf("s: %s, len: %d\n", s, len);
@@ -82,7 +84,7 @@ void setHash(int key, int val, HashNode* hashAry, int maxHashLen) {
     }
 }
 
-int getHash(int key, HashNode* hashAry, int maxHashLen) {
+int getHashLT166(int key, HashNode* hashAry, int maxHashLen) {
     int k = key % maxHashLen;
     for (int i = 0; i < maxHashLen; i++) {
         if (hashAry[i].isOccupied == 0) {
@@ -155,7 +157,7 @@ char* fractionToDecimal(int oldNumerator, int denominator) {
             int index = 0;
             long remainder = newNumerator % denominator;
             printf("remainder1: %d\n", remainder);
-            while (remainder != 0 && getHash(remainder, remHash, maxHashLen) == -1) {
+            while (remainder != 0 && getHashLT166(remainder, remHash, maxHashLen) == -1) {
                 printf("remainder: %d\n", remainder);
                 //rems[remainder] = index++;
                 setHash(remainder, index++, remHash, maxHashLen);
@@ -167,7 +169,7 @@ char* fractionToDecimal(int oldNumerator, int denominator) {
             if (remainder != 0) {
                 printf("remainder2: %d\n", remainder);
 
-                int sTmp = getHash(remainder, remHash, maxHashLen);
+                int sTmp = getHashLT166(remainder, remHash, maxHashLen);
                 for (int i = index - 1; i >= sTmp; i--) {
                     printf("%c ", retStr[startIdx + i]);
                     retStr[startIdx + i + 1] = retStr[startIdx + i];

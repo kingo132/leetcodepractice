@@ -1,7 +1,10 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <limits.h>
 #include <string.h>
+#include <math.h>
+#include <time.h>
 
 /**
  * Return an array of arrays of size *returnSize.
@@ -22,7 +25,7 @@ void copyArray(int* a1, int* a2, int n) {
     }
 }
 
-void dumpArray(const char* prefix, int* a, int n) {
+void dumpArrayLT797(const char* prefix, int* a, int n) {
     printf("%s: ", prefix);
     for (int i = 0; i < n; i++) {
         printf("%d ", a[i]);
@@ -70,7 +73,7 @@ int** allPathsSourceTargetMy(int** graph, int graphSize, int* graphColSize, int*
         //dumpArray("Path", path, pathIdx);
 
         if (v == graphSize - 1) {
-            dumpArray("Found path", path, pathIdx);
+            dumpArrayLT797("Found path", path, pathIdx);
             retAry[*returnSize] = (int*)malloc(pathIdx * sizeof(int));
             copyArray(path, retAry[*returnSize], pathIdx);
             (*returnColumnSizes)[*returnSize] = pathIdx;
@@ -103,7 +106,7 @@ int** allPathsSourceTargetMy(int** graph, int graphSize, int* graphColSize, int*
 }
 
 // Helper function to perform DFS
-void dfs(int** graph, int graphSize, int* graphColSize, int node, int* path, int pathLen, int** result, int* returnSize, int** returnColumnSizes) {
+void dfsLT797(int** graph, int graphSize, int* graphColSize, int node, int* path, int pathLen, int** result, int* returnSize, int** returnColumnSizes) {
     path[pathLen] = node;
     pathLen++;
     
@@ -118,7 +121,7 @@ void dfs(int** graph, int graphSize, int* graphColSize, int node, int* path, int
     } else {
         // Continue DFS on adjacent nodes
         for (int i = 0; i < graphColSize[node]; i++) {
-            dfs(graph, graphSize, graphColSize, graph[node][i], path, pathLen, result, returnSize, returnColumnSizes);
+            dfsLT797(graph, graphSize, graphColSize, graph[node][i], path, pathLen, result, returnSize, returnColumnSizes);
         }
     }
 }
@@ -133,7 +136,7 @@ int** allPathsSourceTargetChatGPT(int** graph, int graphSize, int* graphColSize,
     int* path = (int*)malloc(graphSize * sizeof(int));
     int pathLen = 0;
     
-    dfs(graph, graphSize, graphColSize, 0, path, pathLen, result, returnSize, returnColumnSizes);
+    dfsLT797(graph, graphSize, graphColSize, 0, path, pathLen, result, returnSize, returnColumnSizes);
     
     free(path);
     return result;

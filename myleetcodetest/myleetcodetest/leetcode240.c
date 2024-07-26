@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <limits.h>
@@ -156,7 +157,7 @@ bool searchMatrixMy(int** matrix, int matrixSize, int* matrixColSize, int target
     return false;
 }
 
-bool searchMatrix(int** matrix, int matrixSize, int* matrixColSize, int target) {
+bool searchMatrixLT240(int** matrix, int matrixSize, int* matrixColSize, int target) {
     int row = 0;
     int col = *matrixColSize - 1;
 

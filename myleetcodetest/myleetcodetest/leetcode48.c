@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <limits.h>
@@ -11,7 +12,7 @@ void swapLT48(int* a, int* b) {
     *b = t;
 }
 
-void dumpMatrix(int** m, int n) {
+void dumpMatrixLT48(int** m, int n) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             printf("%d ", m[i][j]);
@@ -20,7 +21,7 @@ void dumpMatrix(int** m, int n) {
     }
 }
 
-void rotate(int** matrix, int matrixSize, int* matrixColSize) {
+void rotateLT48(int** matrix, int matrixSize, int* matrixColSize) {
     int n = matrixSize;
     if (n <= 1) {
         return;

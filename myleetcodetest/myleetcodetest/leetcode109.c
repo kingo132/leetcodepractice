@@ -17,7 +17,7 @@ struct TreeNode {
     struct TreeNode *right;
 };
 
-struct TreeNode* createNode(int* ary, int l, int r) {
+struct TreeNode* createNodeLT109(int* ary, int l, int r) {
     if (l > r) {
         return NULL;
     }
@@ -25,8 +25,8 @@ struct TreeNode* createNode(int* ary, int l, int r) {
     int mid = (l + r) / 2;
     struct TreeNode* n = (struct TreeNode*)malloc(sizeof(struct TreeNode));
     n->val = ary[mid];
-    n->left = createNode(ary, l, mid - 1);
-    n->right = createNode(ary, mid + 1, r);
+    n->left = createNodeLT109(ary, l, mid - 1);
+    n->right = createNodeLT109(ary, mid + 1, r);
     return n;
 }
 
@@ -40,5 +40,5 @@ struct TreeNode* sortedListToBST(struct ListNode* head) {
         p = p->next;
     }
 
-    return createNode(ary, 0, len - 1);
+    return createNodeLT109(ary, 0, len - 1);
 }

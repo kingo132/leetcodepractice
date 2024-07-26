@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <limits.h>
@@ -19,7 +20,7 @@ int binSearch(int* nums, int numsSize, int l, int r, int t) {
     return -1;
 }
 
-int search(int* nums, int numsSize, int target) {
+int searchLT33(int* nums, int numsSize, int target) {
     int l = 0, r = numsSize - 1;
     int mid = (l + r) / 2;
     while (l <= r) {

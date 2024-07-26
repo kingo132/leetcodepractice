@@ -1,8 +1,10 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <limits.h>
 #include <string.h>
 #include <math.h>
+#include <time.h>
 
 // 1. 动态规划只需要考虑当前idx就可以了，不需要考虑下一个idx的事情；
 int changeHelper(int amount, int* coins, int coinsSize, int idx, int** dp, int* path, int pathIdx) {

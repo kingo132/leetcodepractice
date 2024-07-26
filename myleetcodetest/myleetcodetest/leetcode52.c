@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <limits.h>
@@ -65,7 +66,7 @@ bool canPosition(char** board, int n, int ii, int jj) {
     return true;
 }
 
-void dumpMat(const char* prefix, char** board, int n) {
+void dumpMatLT52(const char* prefix, char** board, int n) {
     printf("%s\n", prefix);
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
@@ -77,7 +78,7 @@ void dumpMat(const char* prefix, char** board, int n) {
 
 int totalNQueensHelper(char** board, int n, int i) {
     if (i == n) {
-        dumpMat("Found:", board, n);
+        dumpMatLT52("Found:", board, n);
         return 1;
     }
     int cnt = 0;

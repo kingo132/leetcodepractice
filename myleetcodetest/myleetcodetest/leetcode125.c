@@ -19,7 +19,7 @@ char lowerAlpha(char c) {
     return 0;
 }
 
-bool isPalindrome(char* s) {
+bool isPalindromeLT125(char* s) {
     char* pRight = s;
     while (*(pRight + 1)) {
         pRight ++;
