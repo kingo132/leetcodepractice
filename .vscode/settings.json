@@ -7,6 +7,7 @@
         "math.h": "c",
         "time.h": "c",
         "leetcode236.h": "c",
-        "leetcode268.h": "c"
+        "leetcode268.h": "c",
+        "stdio.h": "c"
     }
 }
